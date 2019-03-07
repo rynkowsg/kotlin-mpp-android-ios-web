@@ -2,9 +2,10 @@ package com.twobuffers.playam.common.presentation
 
 import com.twobuffers.playam.common.utils.logDebug
 
-object MainPresenterImpl : MainPresenter {
-    private const val TAG = "MainPresenter"
-
+class MainPresenterImpl : MainPresenter {
+    companion object {
+        private val TAG = "MainPresenter"
+    }
     private var view: MainView? = null
 
     override fun attach(view: MainView) {
@@ -23,13 +24,13 @@ object MainPresenterImpl : MainPresenter {
 
     override fun onHelloBtnClick() {
         logDebug(tag=TAG, msg="Hello button clicked")
-        view?.renderText("(Hello button is not implemented yet)")
+        view?.showPopup("hello gRPC not implemented")
     }
 
     override fun onInfoBtnClick() {
         logDebug(tag=TAG, msg="Info button clicked")
 //        val feature = getServiceInfo.execute()
 //        val text = "name: ${feature.name}, version: ${feature.version}"
-//        view?.renderText(text)
+        view?.showPopup("info gRPC not implemented")
     }
 }
