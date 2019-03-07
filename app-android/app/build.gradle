@@ -1,0 +1,10 @@
+plugins {
+}
+
+println("[build.gradle of \"${project.name}\"]")
+println("rootDir:     ${rootDir}")
+println("projectDir:  ${projectDir}")
+
+
+dependencies {
+}

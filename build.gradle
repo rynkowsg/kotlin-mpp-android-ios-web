@@ -1,0 +1,8 @@
+plugins {
+    id 'kotlin-multiplatform'
+}
+
+println("[build.gradle of \"${project.name}\"]")
+println("rootDir:     ${rootDir}")
+println("projectDir:  ${projectDir}")
+
