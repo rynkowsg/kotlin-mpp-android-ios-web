@@ -1,4 +1,4 @@
-package com.twobuffers.common.utils
+package com.twobuffers.playam.common.utils
 
 enum class LogLevel {
     DEBUG, INFO, WARN, ERROR

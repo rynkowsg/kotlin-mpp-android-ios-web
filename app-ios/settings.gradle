@@ -1,0 +1,8 @@
+println("[settings.gradle]")
+println("rootDir:     ${rootDir}")
+println("settingsDir: $settingsDir")
+
+include ':app'
+
+include ':lib-common'
+project(':lib-common').projectDir = new File(settingsDir, "../lib-common")

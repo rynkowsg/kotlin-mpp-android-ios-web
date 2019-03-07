@@ -1,6 +1,6 @@
-package com.twobuffers.common.presentation
+package com.twobuffers.playam.common.presentation
 
-import com.twobuffers.common.utils.logDebug
+import com.twobuffers.playam.common.utils.logDebug
 
 object MainPresenterImpl : MainPresenter {
     private const val TAG = "MainPresenter"

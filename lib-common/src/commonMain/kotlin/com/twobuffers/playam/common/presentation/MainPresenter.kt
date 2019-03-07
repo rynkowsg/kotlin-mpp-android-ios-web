@@ -1,4 +1,4 @@
-package com.twobuffers.common.presentation
+package com.twobuffers.playam.common.presentation
 
 interface MainPresenter {
     fun attach(view: MainView)

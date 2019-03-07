@@ -1,4 +1,4 @@
-package com.twobuffers.common.presentation
+package com.twobuffers.playam.common.presentation
 
 interface MainView {
     fun showPopup(text: String)

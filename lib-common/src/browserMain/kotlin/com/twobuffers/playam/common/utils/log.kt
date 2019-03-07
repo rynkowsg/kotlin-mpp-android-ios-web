@@ -1,4 +1,4 @@
-package com.twobuffers.common.utils
+package com.twobuffers.playam.common.utils
 
 internal actual fun writeLogMessage(message: String, logLevel: LogLevel, tag: String) {
     when (logLevel) {

@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
-import com.twobuffers.common.presentation.MainPresenter
-import com.twobuffers.common.presentation.MainView
-import com.twobuffers.common.presentation.PresentationFactory
+import com.twobuffers.playam.common.presentation.MainPresenter
+import com.twobuffers.playam.common.presentation.MainView
+import com.twobuffers.playam.common.presentation.PresentationFactory
 import com.twobuffers.playam.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
