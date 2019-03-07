@@ -1,0 +1,3 @@
+println("[settings.gradle]")
+println("rootDir:     ${rootDir}")
+println("settingsDir: $settingsDir")

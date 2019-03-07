@@ -1,0 +1,30 @@
+apply plugin: 'kotlin-multiplatform'
+
+println("[build.gradle of \"${project.name}\"]")
+println("rootDir:     ${rootDir}")
+println("projectDir:  ${projectDir}")
+
+kotlin {
+    targets {
+        fromPreset(presets.jvm, 'android')
+        fromPreset(presets.js, 'browser')
+    }
+    sourceSets {
+        commonMain {
+            repositories {
+                mavenCentral()
+            }
+            dependencies {
+                api 'org.jetbrains.kotlin:kotlin-stdlib-common'
+            }
+        }
+        androidMain {
+            dependencies {
+                api 'org.jetbrains.kotlin:kotlin-stdlib'
+            }
+        }
+        browserMain.dependencies {
+            api 'org.jetbrains.kotlin:kotlin-stdlib-js'
+        }
+    }
+}

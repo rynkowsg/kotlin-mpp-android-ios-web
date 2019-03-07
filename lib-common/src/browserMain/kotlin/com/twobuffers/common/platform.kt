@@ -1,0 +1,3 @@
+package com.twobuffers.common
+
+actual fun platformName(): String = "Browser"
