@@ -1,10 +1,10 @@
 package com.twobuffers.playam.common.utils
 
-internal actual fun writeLogMessage(message: String, logLevel: LogLevel, tag: String) {
+internal actual fun writeLogMessage(msg: String, logLevel: LogLevel, tag: String) {
     when (logLevel) {
-        LogLevel.DEBUG -> console.log(message)
-        LogLevel.INFO -> console.info(message)
-        LogLevel.WARN -> console.warn(message)
-        LogLevel.ERROR -> console.error(message)
+        LogLevel.DEBUG -> console.log(msg)
+        LogLevel.INFO -> console.info(msg)
+        LogLevel.WARN -> console.warn(msg)
+        LogLevel.ERROR -> console.error(msg)
     }
 }
