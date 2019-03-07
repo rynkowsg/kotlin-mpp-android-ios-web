@@ -27,6 +27,7 @@ buildscript {
 
 apply plugin: 'kotlin2js'
 apply plugin: 'org.jetbrains.kotlin.frontend'
+apply plugin: 'idea'
 
 println("[build.gradle of \"${project.name}\"]")
 println("rootDir:     ${rootDir}")
