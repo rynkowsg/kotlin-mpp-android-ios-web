@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import LibCommon
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
+        label.center = CGPoint(x: 160, y: 285)
+        label.textAlignment = .center
+        label.font = label.font.withSize(25)
+        label.text = PlatformKt.platformName()
+        view.addSubview(label)
     }
-
-
 }
-

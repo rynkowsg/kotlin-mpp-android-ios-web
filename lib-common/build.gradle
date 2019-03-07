@@ -45,7 +45,6 @@ kotlin {
         }
         fromPreset(presets.android, 'android')
         fromPreset(presets.js, 'browser')
-
     }
     sourceSets {
         commonMain {
