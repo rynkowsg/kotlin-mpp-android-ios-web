@@ -1,0 +1,7 @@
+##############################################################################
+### Two Buffers
+##############################################################################
+
+# Local configuration file (sdk path, etc)
+# Since we use Android plugin in common library, this file is auto-generated.
+local.properties

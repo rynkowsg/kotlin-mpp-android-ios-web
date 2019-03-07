@@ -13,20 +13,27 @@ plugins.whenPluginAdded { plugin ->
     }
 }
 
+buildscript {
+    ext.kotlin_version = '1.3.21'
+    repositories {
+        mavenCentral()                                                          // kotlin-gradle-plugin
+        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }                // kotlin-frontend-plugin
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.45"
+    }
+}
 
 apply plugin: 'kotlin2js'
-// https://kotlinlang.org/docs/reference/javascript-dce.html
-apply plugin: 'kotlin-dce-js'
 apply plugin: 'org.jetbrains.kotlin.frontend'
-
 
 println("[build.gradle of \"${project.name}\"]")
 println("rootDir:     ${rootDir}")
 println("projectDir:  ${projectDir}")
 
-
 repositories {
-    jcenter()
+    jcenter()                                                                   // org.jetbrains.kotlin
 }
 
 dependencies {

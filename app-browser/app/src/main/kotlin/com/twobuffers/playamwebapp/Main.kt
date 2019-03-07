@@ -4,13 +4,14 @@ import org.w3c.dom.events.Event
 import kotlin.browser.document
 
 fun main(args: Array<String>) {
-    println("> main()")
+    console.log("> main()")
     document.addEventListener("DOMContentLoaded", {
         println("DOMContentLoaded")
-        document.getElementById("startButton")?.addEventListener("click", ::start)
+        document.getElementById("helloButton")?.addEventListener("click", ::start)
+        document.getElementById("infoButton")?.addEventListener("click", ::start)
     })
 }
 
 fun start(ev: Event) {
-    println("> start()")
+    console.log("> start()")
 }
