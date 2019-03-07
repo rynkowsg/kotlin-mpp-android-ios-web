@@ -1,6 +1,6 @@
-package com.twobuffers.common
+package com.twobuffers.common.utils
 
-internal actual fun writeLogMessage(message: String, logLevel: LogLevel) {
+internal actual fun writeLogMessage(message: String, logLevel: LogLevel, tag: String) {
     when (logLevel) {
         LogLevel.DEBUG -> console.log(message)
         LogLevel.INFO -> console.info(message)
