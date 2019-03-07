@@ -37,8 +37,15 @@ println("projectDir:  ${projectDir}")
 
 kotlin {
     targets {
+        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") ? presets.iosArm64 : presets.iosX64
+        fromPreset(iOSTarget, 'iOS') {
+            binaries {
+                framework('LibCommon')
+            }
+        }
         fromPreset(presets.android, 'android')
         fromPreset(presets.js, 'browser')
+
     }
     sourceSets {
         commonMain {
@@ -63,3 +70,28 @@ kotlin {
         }
     }
 }
+
+// workaround for https://youtrack.jetbrains.com/issue/KT-27170
+configurations {
+    compileClasspath
+}
+
+task packForXCode(type: Sync) {
+    final File frameworkDir = new File(buildDir, "xcode-frameworks")
+    final String mode = project.findProperty("XCODE_CONFIGURATION")?.toUpperCase() ?: 'DEBUG'
+    final def framework = kotlin.targets.iOS.binaries.getFramework("LibCommon", mode)
+
+    inputs.property "mode", mode
+    dependsOn framework.linkTask
+
+    from { framework.outputFile.parentFile }
+    into frameworkDir
+
+    doLast {
+        new File(frameworkDir, 'gradlew').with {
+            text = "#!/bin/bash\nexport 'JAVA_HOME=${System.getProperty("java.home")}'\ncd '${rootProject.rootDir}'\n./gradlew \$@\n"
+            setExecutable(true)
+        }
+    }
+}
+tasks.build.dependsOn packForXCode
