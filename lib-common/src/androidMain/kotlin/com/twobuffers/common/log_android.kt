@@ -1,6 +1,6 @@
 package com.twobuffers.common
 
-actual fun writeLogMessage(message: String, logLevel: LogLevel) {
+internal actual fun writeLogMessage(message: String, logLevel: LogLevel) {
     when (logLevel) {
         LogLevel.DEBUG -> System.out.println("[debug] $message")
         LogLevel.INFO -> System.out.println("[info] $message")

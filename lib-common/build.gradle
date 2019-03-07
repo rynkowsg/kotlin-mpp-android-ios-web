@@ -1,4 +1,8 @@
+group 'com.twobuffers.playam.common'
+version '0.0.1'
+
 apply plugin: 'kotlin-multiplatform'
+apply plugin: 'com.android.library'
 
 println("[build.gradle of \"${project.name}\"]")
 println("rootDir:     ${rootDir}")
@@ -6,7 +10,7 @@ println("projectDir:  ${projectDir}")
 
 kotlin {
     targets {
-        fromPreset(presets.jvm, 'android')
+        fromPreset(presets.android, 'android')
         fromPreset(presets.js, 'browser')
     }
     sourceSets {
@@ -19,12 +23,27 @@ kotlin {
             }
         }
         androidMain {
+            repositories {
+                google()
+                jcenter()
+            }
             dependencies {
                 api 'org.jetbrains.kotlin:kotlin-stdlib'
             }
         }
         browserMain.dependencies {
             api 'org.jetbrains.kotlin:kotlin-stdlib-js'
+        }
+    }
+}
+
+android {
+    defaultConfig {
+        compileSdkVersion 28
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'src/androidMain/AndroidManifest.xml'
         }
     }
 }

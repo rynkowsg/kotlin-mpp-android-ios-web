@@ -4,7 +4,7 @@ enum class LogLevel {
     DEBUG, INFO, WARN, ERROR
 }
 
-expect fun writeLogMessage(message: String, logLevel: LogLevel)
+internal expect fun writeLogMessage(message: String, logLevel: LogLevel)
 
 fun logDebug(message: String) = writeLogMessage(message, LogLevel.DEBUG)
 fun logInfo(message: String) = writeLogMessage(message, LogLevel.INFO)
