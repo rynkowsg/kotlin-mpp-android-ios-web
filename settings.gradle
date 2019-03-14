@@ -1,0 +1,21 @@
+println("[settings.gradle]")
+println("rootDir:     ${rootDir}")
+println("settingsDir: $settingsDir")
+
+include ':lib-common'
+project(':lib-common').projectDir = new File(settingsDir, "lib-common")
+
+include ':lib-data'
+project(':lib-data').projectDir = new File(settingsDir, "lib-data")
+
+include ':app-android'
+include ':app-android:app'
+project(':app-android').projectDir = new File(settingsDir, "app-android")
+
+include ':app-browser'
+include ':app-browser:app'
+project(':app-browser').projectDir = new File(settingsDir, "app-browser")
+
+include ':app-ios'
+include ':app-ios:app'
+project(':app-ios').projectDir = new File(settingsDir, "app-ios")

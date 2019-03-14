@@ -14,11 +14,13 @@ buildscript {
     }
 }
 
-
 apply plugin: 'kotlin-multiplatform'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 
+println("[build.gradle of \"${project.name}\"]")
+println("rootDir:     ${rootDir}")
+println("projectDir:  ${projectDir}")
 
 android {
     defaultConfig {
@@ -30,10 +32,6 @@ android {
         }
     }
 }
-
-println("[build.gradle of \"${project.name}\"]")
-println("rootDir:     ${rootDir}")
-println("projectDir:  ${projectDir}")
 
 kotlin {
     targets {
