@@ -22,6 +22,7 @@ println("[build.gradle of \"${project.name}\"]")
 println("rootDir:     ${rootDir}")
 println("projectDir:  ${projectDir}")
 
+
 android {
     defaultConfig {
         compileSdkVersion 28
@@ -42,7 +43,7 @@ kotlin {
             }
         }
         fromPreset(presets.android, 'android')
-        fromPreset(presets.js, 'browser')
+        fromPreset(presets.js, 'web')
     }
     sourceSets {
         commonMain {
@@ -62,8 +63,10 @@ kotlin {
                 api 'org.jetbrains.kotlin:kotlin-stdlib'
             }
         }
-        browserMain.dependencies {
-            api 'org.jetbrains.kotlin:kotlin-stdlib-js'
+        webMain {
+            dependencies {
+                api 'org.jetbrains.kotlin:kotlin-stdlib-js'
+            }
         }
     }
 }
